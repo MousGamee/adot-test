@@ -62,7 +62,7 @@ function startSlider() {
                 slider[i-1].classList.add('hidden')
                 slider[i-1].classList.remove('visible')
             }
-        }, 2000*i)
+        }, 2500*i)
     }
 }
 
