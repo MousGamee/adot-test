@@ -1,0 +1,258 @@
+body,
+body * {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 667px;
+  width: 375px;
+  overflow: hidden;
+}
+
+/* Top Part */
+.top {
+  height: 50%;
+  background-color: #4facdb;
+  position: relative;
+  padding: 8px;
+}
+
+.logo {
+  object-fit: contain;
+  margin: 39px auto 0;
+  display: flex;
+}
+
+.slide {
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide.slide1 {
+  margin-top: 70px;
+}
+
+.separation {
+  margin-bottom: 20px;
+}
+
+.slide p {
+  text-align: center;
+  display: block;
+}
+
+.light-text {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.medium-text {
+  font-size: 2.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.spacing-letter {
+  letter-spacing: 0.1rem;
+}
+.big-text {
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  font-size: 3rem;
+}
+
+.slide.hidden {
+  display: none;
+}
+
+.mini-text {
+  font-size: 0.7rem;
+  text-align: left;
+  bottom: 10px;
+  position: absolute;
+}
+
+.hide-mini-text {
+  opacity: 0;
+}
+
+.show-mini-text {
+  animation-name: fade-in-element;
+  animation-duration: 0.9s;
+  animation-fill-mode: both;
+}
+.slide4 {
+  font-size: 1rem;
+}
+.btn-slide {
+  width: 250px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  margin-top: 20px;
+}
+
+/* Bottom part */
+
+.bot {
+  height: 50%;
+  width: 100%;
+  position: relative;
+}
+
+.bot .map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  transform: translateY(100%);
+}
+
+.bot .boucle {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
+/* Animation */
+
+.slide .line {
+  animation-name: reveal-title;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.slide4 .line {
+  animation-name: fade-in-element;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.hide-line {
+  animation-name: hide-title;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.logo-top {
+  animation-name: logo-top;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+}
+
+.show-map {
+  animation-name: show-map;
+  animation-delay: 0.5s;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+}
+/* KeyFrame */
+
+@keyframes logo-top {
+  from {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  to {
+    transform: translateX(-150px) translateY(-50px) scale(0.6);
+  }
+}
+
+@keyframes reveal-title {
+  from {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide-title {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-element {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show-map {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Animation ligne par ligne */
+
+.visible .line-item {
+  opacity: 0;
+  animation: reveal-title 600ms ease forwards;
+}
+
+.line-item:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.line-item:nth-child(3) {
+  animation-delay: 150ms;
+}
+
+.line-item:nth-child(4) {
+  animation-delay: 350ms;
+}
+.line-item:nth-child(5) {
+  animation-delay: 450ms;
+}
+.line-item:nth-child(6) {
+  animation-delay: 500ms;
+}
+
+.fade-in-line {
+  opacity: 0;
+  animation: fade-in-element 600ms ease forwards;
+}
+
+.fade-in-line:nth-child(2) {
+  animation-delay: 100ms;
+}
+.fade-in-line:nth-child(3) {
+  animation-delay: 400ms;
+}
+.fade-in-line:nth-child(4) {
+  animation-delay: 500ms;
+}
